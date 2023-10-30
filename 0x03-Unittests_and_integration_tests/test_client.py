@@ -7,6 +7,7 @@ from unittest.mock import MagicMock, Mock, patch, PropertyMock
 from fixtures import TEST_PAYLOAD
 from requests import HTTPError
 
+
 class TestGithubOrgClient(unittest.TestCase):
     """Class tests the GithubOrgClient class"""
     @parameterized.expand([
@@ -38,6 +39,7 @@ class TestGithubOrgClient(unittest.TestCase):
                 GithubOrgClient("google")._public_repos_url,
                 "https://api.github.com/users/google/repos",
             )
+
     @patch("client.get_json")
     def test_public_repos(self, mock_get_json):
         """Function tests the public_repos method"""
@@ -153,4 +155,3 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-        
